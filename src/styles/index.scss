@@ -4,7 +4,7 @@ $blue: #36c4f4;
 $green: #8cb86c;
 $purple: #201644;
 $test: rgba(255, 0, 0, 0.3);
-$br: 5px;
+$br: 10px;
 
 // Globals
 
@@ -109,14 +109,20 @@ section {
 	text-align: center;
 	text-decoration: none;
 	transition: all 0.2s linear;
+
+	@media only screen and (max-width: 431px) {
+		border-radius: 15px;
+	}
 }
 
 .blue-button {
 	background: $blue;
 	border-color: $blue;
+	color: $purple;
 
 	&:hover {
 		filter: contrast(90%);
+		color: white;
 	}
 }
 
@@ -150,18 +156,41 @@ section {
 
 // Styling
 
-.header {
+#header {
 	position: fixed;
+	top: 0;
+	left: 0;
 	padding: 40px;
-	justify-content: flex-start;
-	align-items: center;
 
-	@media only screen and (max-width: 768px) {
-		display: none;
+	@media only screen and (max-width: 1070px) {
+		left: calc(100% - 116px); // total width of #header
+	}
+
+	@media only screen and (max-width: 431px) {
+		top: -131px; // total height of #header
 	}
 
 	img {
-		max-height: 52px;
+		//max-height: 52px;
+		max-width: 36px;
+	}
+}
+
+#mobile-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 40px;
+
+	// @media only screen and (max-width: 431px) {
+	// 	display: block;
+	// }
+
+	img {
+		width: 100px;
+		transform: translateY(1px);
+		visibility: hidden;
+		transition: none;
 	}
 }
 
@@ -170,7 +199,7 @@ section {
 
 	.splash-container {
 		width: 50%;
-		padding: 20px;
+		padding: 40px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -187,17 +216,23 @@ section {
 		}
 
 		.splash-text {
-			.splash-logo {
-				object-fit: contain;
-				height: 52px;
-				display: inline;
-				transform: translateY(2px);
-			}
+			background: $test;
+			font-size: 0;
+			// .splash-logo {
+			// 	object-fit: contain;
+			// 	height: 52px;
+			// 	display: inline;
+			// 	transform: translateY(2px);
+			// }
 
 			.text-desktop {
 				font-size: 64px;
 				display: inline;
 				position: relative;
+
+				@media only screen and (max-width: 870px) {
+					padding-right: 100px;
+				}
 
 				@media only screen and (max-width: 768px) {
 					display: none;
@@ -209,7 +244,7 @@ section {
 				}
 			}
 
-			.text-mobile {
+			.text-tablet {
 				font-size: 64px;
 				display: none;
 				position: relative;
@@ -223,8 +258,9 @@ section {
 					display: inline;
 				}
 
-				@media only screen and (max-width: 630px) {
+				@media only screen and (max-width: 680px) {
 					font-size: 48px;
+					padding-right: 70px;
 
 					img {
 						width: 24px;
@@ -232,8 +268,26 @@ section {
 					}
 				}
 
-				@media only screen and (max-width: 500px) {
+				@media only screen and (max-width: 570px) {
+					padding-right: 0;
+				}
+
+				@media only screen and (max-width: 540px) {
 					font-size: 40px;
+					padding-right: 70px;
+
+					img {
+						width: 20px;
+						margin-right: 1px;
+					}
+				}
+
+				@media only screen and (max-width: 500px) {
+					padding-right: 0;
+				}
+
+				@media only screen and (max-width: 480px) {
+					font-size: 36px;
 
 					img {
 						width: 20px;
@@ -243,9 +297,28 @@ section {
 
 				@media only screen and (max-width: 431px) {
 					font-size: 40px;
+					display: none;
 
 					img {
 						width: 20px;
+						margin-right: 1px;
+					}
+				}
+
+				@media only screen and (max-width: 422px) {
+					font-size: 36px;
+
+					img {
+						width: 18px;
+						margin-right: 1px;
+					}
+				}
+
+				@media only screen and (max-width: 388px) {
+					font-size: 32px;
+
+					img {
+						width: 16px;
 						margin-right: 1px;
 					}
 				}
@@ -256,6 +329,38 @@ section {
 					img {
 						width: 14px;
 						margin-right: 1px;
+					}
+				}
+			}
+
+			#mobile-logo-marker {
+				width: 100px;
+				height: auto;
+				transform: translateY(1px);
+				margin-right: 10px;
+				background: $test;
+				transition: none;
+			}
+
+			#mobile-logo-marker.sticky {
+				position: fixed;
+				top: 0;
+				transition: height 0.3s ease-in-out;
+			}
+
+			.text-mobile,
+			#logo-line {
+				font-size: 64px;
+				display: none;
+				position: relative;
+
+				@media only screen and (max-width: 431px) {
+					font-size: 40px;
+					display: inline;
+
+					img {
+						width: 100px;
+						transform: translateY(1px);
 					}
 				}
 			}
@@ -292,7 +397,7 @@ section {
 				max-width: 20px;
 				filter: invert(100%);
 				cursor: pointer;
-				animation: bounce 2s 1;
+				animation: bounce 2s 2;
 
 				@keyframes bounce {
 					0%,
@@ -316,6 +421,10 @@ section {
 
 .information {
 	height: 100vh;
+
+	@media only screen and (max-width: 431px) {
+		padding-bottom: 20px;
+	}
 
 	.information-container {
 		width: 50%;
@@ -384,12 +493,12 @@ section {
 					}
 
 					@media only screen and (max-width: 431px) {
-						font-size: 32px;
+						display: none;
 					}
 
-					@media only screen and (max-width: 360px) {
-						font-size: 20px;
-					}
+					// @media only screen and (max-width: 360px) {
+					// 	font-size: 20px;
+					// }
 				}
 
 				.contact {
@@ -401,6 +510,10 @@ section {
 					margin-top: 20px;
 					padding-top: 20px;
 
+					img {
+						display: none;
+					}
+
 					.email {
 						display: flex;
 
@@ -408,6 +521,76 @@ section {
 							max-width: 16px;
 							margin-right: 6px;
 							filter: invert(100%);
+						}
+					}
+
+					#launching {
+						padding: 6px 10px;
+					}
+
+					.text-mobile {
+						font-size: 64px;
+						display: none;
+						position: relative;
+
+						img {
+							width: 32px;
+							margin-right: 2px;
+						}
+
+						@media only screen and (max-width: 431px) {
+							display: inline-block;
+							font-size: 40px;
+
+							img {
+								width: 20px;
+								margin-right: 1px;
+							}
+						}
+
+						@media only screen and (max-width: 422px) {
+							font-size: 36px;
+
+							img {
+								width: 18px;
+								margin-right: 1px;
+							}
+						}
+
+						@media only screen and (max-width: 388px) {
+							font-size: 32px;
+
+							img {
+								width: 16px;
+								margin-right: 1px;
+							}
+						}
+
+						@media only screen and (max-width: 360px) {
+							font-size: 26px;
+
+							img {
+								width: 14px;
+								margin-right: 1px;
+							}
+						}
+					}
+
+					@media only screen and (max-width: 431px) {
+						border-top: none;
+						border-bottom: 2px solid white;
+						padding-top: 0;
+						padding-bottom: 10px;
+						justify-content: flex-end; //z-j
+
+						img {
+							display: none; // logo here, shoot to z-j
+							width: 100px;
+							transform: translateY(1px);
+						}
+
+						.email {
+							display: none;
 						}
 					}
 				}
@@ -428,11 +611,14 @@ section {
 
 				@media only screen and (max-width: 768px) {
 					flex-direction: row;
+					justify-content: space-between;
+					column-gap: 20px;
 					width: 100%;
 				}
 
-				@media only screen and (max-width: 520px) {
-					justify-content: space-between;
+				@media only screen and (max-width: 431px) {
+					flex-direction: column;
+					row-gap: 20px;
 				}
 
 				a {
@@ -453,23 +639,26 @@ section {
 
 					@media only screen and (max-width: 768px) {
 						padding: 20px;
+						width: 100%;
 
 						&:last-of-type {
 							margin-top: 0;
-							margin-left: 40px;
+							// margin-left: 40px;
 						}
 					}
 
-					@media only screen and (max-width: 520px) {
+					@media only screen and (max-width: 532px) {
 						font-size: 14px;
-
-						&:last-of-type {
-							margin-left: 0;
-						}
 					}
 
-					@media only screen and (max-width: 450px) {
+					@media only screen and (max-width: 490px) {
 						padding: 16px;
+						font-size: 12px;
+					}
+
+					@media only screen and (max-width: 431px) {
+						padding: 20px;
+						font-size: 24px;
 					}
 				}
 			}
@@ -477,27 +666,52 @@ section {
 
 		.cards-container {
 			display: grid;
-			grid-template-columns: 40% 1fr 40%;
+			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 1fr 1fr;
 			gap: 40px;
 			margin-top: 80px;
 
-			@media only screen and (max-width: 960px) {
-				grid-template-columns: 1fr 1fr;
-
-				.spacing-card {
-					display: none;
-				}
-			}
-
 			@media only screen and (max-width: 500px) {
 				grid-template-columns: 1fr;
-				margin-top: 40px;
+				margin-top: 50px;
 				gap: 0;
 				row-gap: 20px;
 			}
 
 			.card {
+				display: flex;
+				flex-direction: row;
+				column-gap: 15px;
+				flex-basis: 45%;
+
+				.asterisk {
+					position: relative;
+					content: "*";
+					font-size: 64px;
+					transform: translateY(-3px);
+
+					@media only screen and (max-width: 800px) {
+						font-size: 50px;
+					}
+
+					@media only screen and (max-width: 745px) {
+						font-size: 40px;
+					}
+
+					@media only screen and (max-width: 600px) {
+						font-size: 30px;
+					}
+
+					@media only screen and (max-width: 500px) {
+						font-size: 50px;
+					}
+
+					@media only screen and (max-width: 431px) {
+						font-size: 50px;
+						transform: translateY(-7px);
+					}
+				}
+
 				h2 {
 					color: white;
 					font-weight: 500;
@@ -519,31 +733,49 @@ section {
 						font-size: 26px;
 					}
 
-					.asterisk {
-						position: relative;
-						content: "*";
-						font-size: 64px;
-						display: inline-block;
-						transform: rotate(180deg);
+					@media only screen and (max-width: 431px) {
+						font-size: 21px;
+					}
+				}
+			}
+		}
 
-						@media only screen and (max-width: 800px) {
-							font-size: 50px;
-						}
+		.mobile-info-container {
+			display: none;
 
-						@media only screen and (max-width: 745px) {
-							font-size: 40px;
-						}
+			@media only screen and (max-width: 431px) {
+				display: block;
+				margin-top: 40px;
 
-						@media only screen and (max-width: 600px) {
-							font-size: 30px;
-						}
+				h1 {
+					font-size: 30px;
+				}
 
-						@media only screen and (max-width: 500px) {
-							font-size: 50px;
-						}
+				.email {
+					display: flex;
+					column-gap: 10px;
+					margin-top: 25px;
+
+					a {
+						font-size: 16px;
+					}
+
+					img {
+						max-width: 16px;
+						filter: invert(100%);
+						transform: translateY(1px);
 					}
 				}
 			}
 		}
 	}
 }
+
+// #mobile-sticky-div {
+// 	transform: translateY(3px);
+// }
+
+// #mobile-logo-marker {
+// 	opacity: 0;
+// 	background: $test;
+// }
