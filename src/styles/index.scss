@@ -16,6 +16,10 @@ $br: 10px;
 	transition: all 0.2s linear;
 }
 
+html {
+	scrollbar-width: thin;
+}
+
 body {
 	background-color: $purple;
 }
@@ -57,6 +61,49 @@ body {
 	}
 }
 
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	//background: rgba(32, 22, 68, 0.9);
+	background: $purple;
+
+	.video-container {
+		position: relative;
+		width: 70vw;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.close-video {
+			padding-top: 20px;
+			color: white;
+			cursor: pointer;
+			background: $purple;
+			display: inline-block;
+			font-weight: 500;
+		}
+
+		iframe {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			border: 3px solid $purple;
+			border-radius: 10px;
+		}
+
+		@media only screen and (max-width: 431px) {
+			width: 90vw;
+		}
+	}
+}
+
 .sticky-logo {
 	position: fixed;
 	top: 30px;
@@ -83,7 +130,10 @@ body {
 	.first-page-container {
 		position: relative;
 		width: 60%;
+		height: 100%;
 		height: 100vh;
+		height: 100dvh;
+		height: 100svh;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
@@ -172,7 +222,10 @@ body {
 	.second-page-container {
 		position: relative;
 		width: 60%;
+		height: 100%;
 		height: 100vh;
+		height: 100dvh;
+		height: 100svh;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
@@ -452,7 +505,7 @@ body {
 		}
 
 		@media only screen and (max-width: 431px) {
-			row-gap: 5vh;
+			row-gap: 3vh;
 			.tag-and-buttons-container {
 				.tag {
 					display: none;

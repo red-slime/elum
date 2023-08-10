@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "astro": "^2.9.6",
+    "fullpage.js": "^4.0.20",
     "sass": "^1.64.2"
   }
 }
