@@ -31,6 +31,7 @@ body {
 	color: white;
 	visibility: hidden;
 	transition: all 0.5s linear;
+	will-change: top, left, visibility;
 
 	.elum-u {
 		width: 4vw;
@@ -53,7 +54,7 @@ body {
 	border-radius: 100%;
 	background: radial-gradient(circle at center, $green 30%, $purple);
 	filter: blur(100px);
-	animation: glow 3s ease-in-out infinite alternate;
+	animation: glow 2s ease-in-out infinite alternate;
 	transition: transform, width, height, top, right 1s linear;
 	z-index: -1;
 
@@ -70,7 +71,7 @@ body {
 			transform: scale(120%);
 		}
 		100% {
-			transform: scale(140%);
+			transform: scale(130%);
 		}
 	}
 }
