@@ -1,5 +1,6 @@
 ---
 import "../styles/index.scss";
+//import { initFullPage } from "fullPage-init.js";
 ---
 
 <!DOCTYPE html>
@@ -139,6 +140,7 @@ import "../styles/index.scss";
 				let resizeTimer;
 
 				function updatePositions() {
+					logoFollower.style.transition = "none";
 					hiddenMobileLogo = document
 						.querySelector("#hidden-mobile-logo")
 						.getBoundingClientRect();
@@ -153,28 +155,28 @@ import "../styles/index.scss";
 					logoFollower.style.visibility = "visible";
 					document.querySelector("#hidden-mobile-logo").style.visibility =
 						"hidden";
-
-					setTimeout(function () {
-						logoFollower.style.transition = "all 0.2s linear";
-					}, 200);
+					setTimeout(() => {
+						logoFollower.style.transition = "all 0.3s linear";
+					}, 300);
 				}
 
-				window.addEventListener("resize", function () {
-					if (window.innerWidth <= 431) {
-						clearTimeout(resizeTimer);
-						logoFollower.style.transition = "none";
-						logoFollower.style.visibility = "hidden";
-						document.querySelector("#hidden-mobile-logo").style.visibility =
-							"visible";
+				setTimeout(updatePositions, 200);
 
-						resizeTimer = setTimeout(updatePositions, 200);
-					} else {
-						document.querySelector("#hidden-mobile-logo").style.visibility =
-							"visible";
-					}
+				window.addEventListener("resize", function () {
+					//if (window.innerWidth <= 431) {
+					clearTimeout(resizeTimer);
+
+					// Hide logo-follower and show other logos during resizing
+					logoFollower.style.visibility = "hidden";
+					document.querySelector("#hidden-mobile-logo").style.visibility =
+						"visible";
+
+					resizeTimer = setTimeout(updatePositions, 200); // Time after which the updatePositions function will run again
+					//}
 				});
 
 				// fullPage.js Settings
+
 				new fullpage("#fullpage", {
 					licenseKey: "NLNLI-982P9-87SIK-FNMH9-XJBUM",
 					autoScrolling: true,
@@ -184,14 +186,11 @@ import "../styles/index.scss";
 						enabled: false,
 					},
 					onLeave: function (origin, destination, direction) {
-						if (window.innerWidth <= 431) {
-							// Only run this code if the window is 431px or less
-							const progress = destination.index / (sectionCount - 1);
-							const newX = hiddenMobileLogo.left + distanceX * progress;
-							const newY = hiddenMobileLogo.top + distanceY * progress;
-							logoFollower.style.left = newX + "px";
-							logoFollower.style.top = newY + "px";
-						}
+						const progress = destination.index / (sectionCount - 1);
+						const newX = hiddenMobileLogo.left + distanceX * progress;
+						const newY = hiddenMobileLogo.top + distanceY * progress;
+						logoFollower.style.left = newX + "px";
+						logoFollower.style.top = newY + "px";
 					},
 				});
 			});
