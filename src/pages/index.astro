@@ -42,7 +42,7 @@ import "../styles/index.scss";
 				</div>
 			</div>
 			<section class="first-page section">
-				<div class="first-page-container">
+				<div class="first-page-container" id="first-page-opacity">
 					<div class="spacer"></div>
 					<div class="first-page-text">
 						<h1 class="first-page-text-desktop" id="logo-location">
@@ -156,7 +156,7 @@ import "../styles/index.scss";
 					document.querySelector("#hidden-mobile-logo").style.visibility =
 						"hidden";
 					setTimeout(() => {
-						logoFollower.style.transition = "all 0.3s linear";
+						logoFollower.style.transition = "all 0.5s linear";
 					}, 300);
 				}
 
@@ -181,16 +181,26 @@ import "../styles/index.scss";
 					licenseKey: "NLNLI-982P9-87SIK-FNMH9-XJBUM",
 					autoScrolling: true,
 					scrollHorizontally: true,
+					scrollingSpeed: 900,
 					fixedElements: ".sticky-logo, .gradient, .modal",
 					credits: {
 						enabled: false,
 					},
 					onLeave: function (origin, destination, direction) {
+						// Logo methods
 						const progress = destination.index / (sectionCount - 1);
 						const newX = hiddenMobileLogo.left + distanceX * progress;
 						const newY = hiddenMobileLogo.top + distanceY * progress;
 						logoFollower.style.left = newX + "px";
 						logoFollower.style.top = newY + "px";
+						// Opacity
+						const firstPageContainer =
+							document.getElementById("first-page-opacity");
+						if (origin.index == 0 && direction == "down") {
+							firstPageContainer.style.opacity = 0;
+						} else if (origin.index == 1 && direction == "up") {
+							firstPageContainer.style.opacity = 1;
+						}
 					},
 				});
 			});
