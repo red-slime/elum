@@ -24,6 +24,23 @@ body {
 	background-color: $purple;
 }
 
+#logo-follower {
+	position: absolute;
+	display: none;
+	font-size: 8vw;
+	color: white;
+	visibility: hidden;
+
+	.elum-u {
+		width: 4vw;
+		margin-right: 0.2vw;
+	}
+
+	@media only screen and (max-width: 431px) {
+		display: inline;
+	}
+}
+
 .gradient {
 	will-change: transform, width, height, top, right;
 	position: fixed;
@@ -148,6 +165,7 @@ body {
 				font-size: 5vw;
 				color: white;
 				margin-bottom: 5vh;
+				display: inline;
 
 				.elum-u {
 					width: 2.5vw;
@@ -156,6 +174,10 @@ body {
 
 				.mobile-break {
 					display: none;
+				}
+
+				#hidden-mobile-logo {
+					display: inline;
 				}
 			}
 			.first-page-subtext-desktop {
@@ -529,6 +551,7 @@ body {
 						display: inline;
 						font-size: 8vw;
 						color: white;
+						visibility: hidden;
 
 						.elum-u {
 							width: 4vw;
@@ -562,3 +585,12 @@ body {
 		}
 	}
 }
+
+// #logo-follower,
+// #hidden-mobile-logo,
+// #logo-location-two {
+// 	margin: 0;
+// 	padding: 0;
+// 	box-sizing: border-box;
+// 	display: inline;
+// }

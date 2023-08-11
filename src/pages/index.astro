@@ -1,6 +1,5 @@
 ---
 import "../styles/index.scss";
-//import { initFullPage } from "fullPage-init.js";
 ---
 
 <!DOCTYPE html>
@@ -23,6 +22,12 @@ import "../styles/index.scss";
 	</head>
 	<body>
 		<div id="fullpage">
+			<h1 id="logo-follower">
+				el<img src="elum-u.png" alt="elum u" class="elum-u" />m
+			</h1>
+			<div class="sticky-logo">
+				<img src="elum-u.png" alt="elum u" class="elum-u" />
+			</div>
 			<div class="gradient"></div>
 			<div class="modal">
 				<div class="video-container">
@@ -35,17 +40,15 @@ import "../styles/index.scss";
 					<p class="close-video">back to elum</p>
 				</div>
 			</div>
-			<div class="sticky-logo">
-				<img src="elum-u.png" alt="elum u" class="elum-u" />
-			</div>
 			<section class="first-page section">
 				<div class="first-page-container">
 					<div class="spacer"></div>
 					<div class="first-page-text">
-						<h1 class="first-page-text-desktop logo">
-							el<img src="elum-u.png" alt="elum u" class="elum-u" />m is a
-							virtual <br /> training <br class="mobile-break" /> development <br
-							/> and deployment
+						<h1 class="first-page-text-desktop" id="logo-location">
+							<span id="hidden-mobile-logo"
+								>el<img src="elum-u.png" alt="elum u" class="elum-u" />m</span
+							> is a virtual <br /> training <br class="mobile-break" /> development
+							<br /> and deployment
 							<br />
 							platform.
 						</h1>
@@ -72,7 +75,7 @@ import "../styles/index.scss";
 								<a href="mailto:#" class="launching-email"
 									>info@elumplatform.com</a
 								>
-								<h1 class="launching-info-logo logo">
+								<h1 class="launching-info-logo" id="logo-location-two">
 									el<img src="elum-u.png" alt="elum u" class="elum-u" />m
 								</h1>
 								<span class="launching-date">launching 2024</span>
@@ -129,17 +132,71 @@ import "../styles/index.scss";
 			</section>
 		</div>
 		<script>
-			// Init fullPage.js
-			new fullpage("#fullpage", {
-				licenseKey: "NLNLI-982P9-87SIK-FNMH9-XJBUM",
-				autoScrolling: true,
-				scrollHorizontally: true,
-				fixedElements: ".sticky-logo, .gradient, .modal",
-				credits: {
-					enabled: false,
-				},
-			});
+			document.addEventListener("DOMContentLoaded", function () {
+				let hiddenMobileLogo, logoLocationTwo, distanceX, distanceY;
+				const logoFollower = document.querySelector("#logo-follower");
+				const sectionCount = document.querySelectorAll(".section").length;
+				let resizeTimer;
 
+				function updatePositions() {
+					hiddenMobileLogo = document
+						.querySelector("#hidden-mobile-logo")
+						.getBoundingClientRect();
+					logoLocationTwo = document
+						.querySelector("#logo-location-two")
+						.getBoundingClientRect();
+					distanceX = logoLocationTwo.left - hiddenMobileLogo.left;
+					distanceY = logoLocationTwo.top - hiddenMobileLogo.top;
+					logoFollower.style.left =
+						hiddenMobileLogo.left + window.scrollX + "px";
+					logoFollower.style.top = hiddenMobileLogo.top + window.scrollY + "px";
+					logoFollower.style.visibility = "visible";
+					document.querySelector("#hidden-mobile-logo").style.visibility =
+						"hidden";
+
+					setTimeout(function () {
+						logoFollower.style.transition = "all 0.2s linear";
+					}, 200);
+				}
+
+				window.addEventListener("resize", function () {
+					if (window.innerWidth <= 431) {
+						clearTimeout(resizeTimer);
+						logoFollower.style.transition = "none";
+						logoFollower.style.visibility = "hidden";
+						document.querySelector("#hidden-mobile-logo").style.visibility =
+							"visible";
+
+						resizeTimer = setTimeout(updatePositions, 200);
+					} else {
+						document.querySelector("#hidden-mobile-logo").style.visibility =
+							"visible";
+					}
+				});
+
+				// fullPage.js Settings
+				new fullpage("#fullpage", {
+					licenseKey: "NLNLI-982P9-87SIK-FNMH9-XJBUM",
+					autoScrolling: true,
+					scrollHorizontally: true,
+					fixedElements: ".sticky-logo, .gradient, .modal",
+					credits: {
+						enabled: false,
+					},
+					onLeave: function (origin, destination, direction) {
+						if (window.innerWidth <= 431) {
+							// Only run this code if the window is 431px or less
+							const progress = destination.index / (sectionCount - 1);
+							const newX = hiddenMobileLogo.left + distanceX * progress;
+							const newY = hiddenMobileLogo.top + distanceY * progress;
+							logoFollower.style.left = newX + "px";
+							logoFollower.style.top = newY + "px";
+						}
+					},
+				});
+			});
+		</script>
+		<script>
 			// Scroll button
 			document
 				.querySelector(".scroll-icon")
