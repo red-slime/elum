@@ -213,18 +213,33 @@ import "../styles/index.scss";
 					fullpage_api.moveTo("second-page-anchor");
 				});
 
-			// Video modal
+			// Open modal when clicking the video button
 			document
 				.querySelector(".video-button")
 				.addEventListener("click", function () {
 					document.querySelector(".modal").style.display = "flex";
 				});
 
+			// Close modal when clicking the close button
 			document
 				.querySelector(".close-video")
 				.addEventListener("click", function () {
 					document.querySelector(".modal").style.display = "none";
 				});
+
+			// Close modal when clicking outside the video container
+			document.addEventListener("click", function (event) {
+				var modal = document.querySelector(".modal");
+				var videoContainer = document.querySelector(".video-container");
+
+				if (
+					modal.style.display === "flex" &&
+					!videoContainer.contains(event.target) &&
+					event.target !== document.querySelector(".video-button")
+				) {
+					modal.style.display = "none";
+				}
+			});
 		</script>
 	</body>
 </html>
