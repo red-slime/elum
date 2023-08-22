@@ -1,5 +1,7 @@
 ---
 import "../styles/index.scss";
+import Asterisk from "../assets/asterisk-solid.svg";
+import Envelope from "../assets/envelope.svg";
 //import { initFullPage } from "fullPage-init.js";
 ---
 
@@ -73,9 +75,13 @@ import "../styles/index.scss";
 						<h2 class="tag">knowledge is a right.<br />stay eluminated.</h2>
 						<div class="launching-container-mobile">
 							<div class="launching-info">
-								<a href="mailto:#" class="launching-email"
-									>info@elumplatform.com</a
-								>
+								<div class="launching-email-container">
+									<img src={Envelope} alt="envelope" />
+									<a href="mailto:info@elumplatform.com" class="launching-email"
+										>info@elumplatform.com</a
+									>
+								</div>
+
 								<h1 class="launching-info-logo" id="logo-location-two">
 									el<img src="elum-u.png" alt="elum u" class="elum-u" />m
 								</h1>
@@ -103,28 +109,36 @@ import "../styles/index.scss";
 					</div>
 					<div class="launching-container-desktop">
 						<div class="launching-info">
-							<a href="mailto:#" class="launching-email"
-								>info@elumplatform.com</a
-							>
+							<div class="launching-email-container">
+								<img src={Envelope} alt="envelope" />
+								<a href="mailto:info@elumplatform.com" class="launching-email"
+									>info@elumplatform.com</a
+								>
+							</div>
+
 							<span class="launching-date">launching 2024</span>
 						</div>
 						<div class="launching-spacer"></div>
 					</div>
 					<div class="asterisk-container">
 						<div class="asterisk-text-container">
+							<img src={Asterisk} alt="asterisk" />
 							<p class="asterisk-text">learn anywhere, anytime, step-by-step</p>
 						</div>
 						<div class="asterisk-text-container">
+							<img src={Asterisk} alt="asterisk" />
 							<p class="asterisk-text">
 								get efficient at a new skill quickly & safely
 							</p>
 						</div>
 						<div class="asterisk-text-container">
+							<img src={Asterisk} alt="asterisk" />
 							<p class="asterisk-text">
 								save money training yourself, and others, up
 							</p>
 						</div>
 						<div class="asterisk-text-container">
+							<img src={Asterisk} alt="asterisk" />
 							<p class="asterisk-text">
 								visualize it all in precise 3D & video
 							</p>
@@ -132,9 +146,12 @@ import "../styles/index.scss";
 					</div>
 					<div class="tag-and-email-container-mobile">
 						<h2 class="tag">knowledge is a right.<br />stay eluminated.</h2>
-						<a href="mailto:info@elumplatform" class="launching-email"
-							>info@elumplatform.com</a
-						>
+						<div class="launching-email-container">
+							<img src={Envelope} alt="envelope" />
+							<a href="mailto:info@elumplatform" class="launching-email"
+								>info@elumplatform.com</a
+							>
+						</div>
 					</div>
 				</div>
 			</section>
