@@ -44,7 +44,6 @@ body {
 }
 
 .gradient {
-	will-change: transform, width, height, top, right;
 	position: fixed;
 	right: -50%;
 	top: -100%;
@@ -57,6 +56,7 @@ body {
 	animation: glow 2s ease-in-out infinite alternate;
 	transition: transform, width, height, top, right 1s linear;
 	z-index: -1;
+	will-change: transform, scale, width, height, top, right, bottom, left;
 
 	@media only screen and (max-width: 768px) {
 		right: -50%;
