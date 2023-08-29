@@ -157,7 +157,8 @@ import Envelope from "../assets/envelope.svg";
 			</section>
 		</div>
 		<script>
-			document.addEventListener("DOMContentLoaded", function () {
+			//document.addEventListener("DOMContentLoaded", function () {
+			window.onload = function () {
 				let hiddenMobileLogo, logoLocationTwo, distanceX, distanceY;
 				const logoFollower = document.querySelector("#logo-follower");
 				const sectionCount = document.querySelectorAll(".section").length;
@@ -231,7 +232,7 @@ import Envelope from "../assets/envelope.svg";
 						}
 					},
 				});
-			});
+			};
 		</script>
 		<script>
 			// Scroll button
