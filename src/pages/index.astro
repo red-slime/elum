@@ -35,7 +35,7 @@ import Envelope from "../assets/envelope.svg";
 			<div class="modal">
 				<div class="video-container">
 					<iframe
-						src="https://www.youtube.com/embed/fUZQuI5JRyY"
+						src="https://www.youtube.com/embed/cfFI0LokqhI"
 						title="YouTube video player"
 						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -89,16 +89,16 @@ import Envelope from "../assets/envelope.svg";
 							</div>
 						</div>
 						<div class="buttons">
-							<!-- <a
+							<a
 								href="javascript:void(0)"
 								class="second-page-button blue-button video-button"
 								>watch the video</a
-							> -->
-							<a
+							>
+							<!-- <a
 								href="mailto:info@elumplatform.com"
 								class="second-page-button blue-button video-button"
 								>get in touch</a
-							>
+							> -->
 							<a
 								href="/Elum White Paper.pdf"
 								target="_blank"
@@ -242,33 +242,33 @@ import Envelope from "../assets/envelope.svg";
 					fullpage_api.moveTo("second-page-anchor");
 				});
 
-			// // Open modal when clicking the video button
-			// document
-			// 	.querySelector(".video-button")
-			// 	.addEventListener("click", function () {
-			// 		document.querySelector(".modal").style.display = "flex";
-			// 	});
+			// Open modal when clicking the video button
+			document
+				.querySelector(".video-button")
+				.addEventListener("click", function () {
+					document.querySelector(".modal").style.display = "flex";
+				});
 
-			// // Close modal when clicking the close button
-			// document
-			// 	.querySelector(".close-video")
-			// 	.addEventListener("click", function () {
-			// 		document.querySelector(".modal").style.display = "none";
-			// 	});
+			// Close modal when clicking the close button
+			document
+				.querySelector(".close-video")
+				.addEventListener("click", function () {
+					document.querySelector(".modal").style.display = "none";
+				});
 
-			// // Close modal when clicking outside the video container
-			// document.addEventListener("click", function (event) {
-			// 	var modal = document.querySelector(".modal");
-			// 	var videoContainer = document.querySelector(".video-container");
+			// Close modal when clicking outside the video container
+			document.addEventListener("click", function (event) {
+				var modal = document.querySelector(".modal");
+				var videoContainer = document.querySelector(".video-container");
 
-			// 	if (
-			// 		modal.style.display === "flex" &&
-			// 		!videoContainer.contains(event.target) &&
-			// 		event.target !== document.querySelector(".video-button")
-			// 	) {
-			// 		modal.style.display = "none";
-			// 	}
-			// });
+				if (
+					modal.style.display === "flex" &&
+					!videoContainer.contains(event.target) &&
+					event.target !== document.querySelector(".video-button")
+				) {
+					modal.style.display = "none";
+				}
+			});
 		</script>
 	</body>
 </html>
