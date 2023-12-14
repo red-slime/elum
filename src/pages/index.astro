@@ -5,22 +5,23 @@ import Envelope from "../assets/envelope.svg";
 //import { initFullPage } from "fullPage-init.js";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" type="text/css" href="fullpage.min.css" />
-		<script type="text/javascript" src="fullpage.min.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="fullpage.min.css" />
+    <script type="text/javascript" src="fullpage.min.js"></script>
 
+<<<<<<< HEAD
 		<title>elum | virtual training development & deployment</title>
 	</head>
 	<body>
@@ -69,187 +70,238 @@ import Envelope from "../assets/envelope.svg";
 					</div>
 				</div>
 			</section>
+=======
+    <title>elum | virtual training development & deployment</title>
+  </head>
+  <body>
+    <div id="fullpage">
+      <h1 id="logo-follower">
+        el<img src="elum-u.png" alt="elum u" class="elum-u" />m
+      </h1>
+      <div class="sticky-logo">
+        <img src="elum-u.png" alt="elum u" class="elum-u" />
+      </div>
+      <div class="gradient"></div>
+      <div class="modal">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/5rGAkWVmG24"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <p class="close-video">back to elum</p>
+        </div>
+      </div>
+      <section class="first-page section">
+        <div class="first-page-container" id="first-page-opacity">
+          <div class="spacer"></div>
+          <div class="first-page-text">
+            <h1 class="first-page-text-desktop" id="logo-location">
+              <span id="hidden-mobile-logo"
+                >el<img src="elum-u.png" alt="elum u" class="elum-u" />m</span
+              > is a virtual <br /> training <br class="mobile-break" />
+              development
+              <br /> and deployment
+              <br />
+               platform.
+            </h1>
+            <h2 class="first-page-subtext-desktop">
+              it teaches you to do <br /> a complicated thing clearly.
+            </h2>
+          </div>
+          <div class="spacer icon-container">
+            <img
+              class="scroll-icon"
+              src="scroll-down.svg"
+              alt="scroll-down-icon"
+            />
+          </div>
+        </div>
+      </section>
+>>>>>>> c03ee8aae5dfb227afb35434f3c97d0d8b3768bd
 
-			<section class="second-page section" data-anchor="second-page-anchor">
-				<div class="second-page-container">
-					<div class="tag-and-buttons-container">
-						<h2 class="tag">knowledge is a right.<br />stay eluminated.</h2>
-						<div class="launching-container-mobile">
-							<div class="launching-info">
-								<div class="launching-email-container">
-									<img src={Envelope} alt="envelope" />
-									<a href="mailto:info@elumplatform.com" class="launching-email"
-										>info@elumplatform.com</a
-									>
-								</div>
+      <section class="second-page section" data-anchor="second-page-anchor">
+        <div class="second-page-container">
+          <div class="tag-and-buttons-container">
+            <h2 class="tag">knowledge is a right.<br />stay eluminated.</h2>
+            <div class="launching-container-mobile">
+              <div class="launching-info">
+                <div class="launching-email-container">
+                  <img src={Envelope} alt="envelope" />
+                  <a href="mailto:info@elumplatform.com" class="launching-email"
+                    >info@elumplatform.com</a
+                  >
+                </div>
 
-								<h1 class="launching-info-logo" id="logo-location-two">
-									el<img src="elum-u.png" alt="elum u" class="elum-u" />m
-								</h1>
-								<span class="launching-date">launching 2024</span>
-							</div>
-						</div>
-						<div class="buttons">
-							<a
-								href="javascript:void(0)"
-								class="second-page-button blue-button video-button"
-								>watch the video</a
-							>
-							<!-- <a
+                <h1 class="launching-info-logo" id="logo-location-two">
+                  el<img src="elum-u.png" alt="elum u" class="elum-u" />m
+                </h1>
+                <span class="launching-date">launching 2024</span>
+              </div>
+            </div>
+            <div class="buttons">
+              <a
+                href="javascript:void(0)"
+                class="second-page-button blue-button video-button"
+                >watch the video</a
+              >
+              <!-- <a
 								href="mailto:info@elumplatform.com"
 								class="second-page-button blue-button video-button"
 								>get in touch</a
 							> -->
-							<a
-								href="/Elum White Paper.pdf"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="second-page-button white-button">view the white paper</a
-							>
-						</div>
-					</div>
-					<div class="launching-container-desktop">
-						<div class="launching-info">
-							<div class="launching-email-container">
-								<img src={Envelope} alt="envelope" />
-								<a href="mailto:info@elumplatform.com" class="launching-email"
-									>info@elumplatform.com</a
-								>
-							</div>
+              <a
+                href="/Elum White Paper.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="second-page-button white-button">view the white paper</a
+              >
+            </div>
+          </div>
+          <div class="launching-container-desktop">
+            <div class="launching-info">
+              <div class="launching-email-container">
+                <img src={Envelope} alt="envelope" />
+                <a href="mailto:info@elumplatform.com" class="launching-email"
+                  >info@elumplatform.com</a
+                >
+              </div>
 
-							<span class="launching-date">launching 2024</span>
-						</div>
-						<div class="launching-spacer"></div>
-					</div>
-					<div class="asterisk-container">
-						<div class="asterisk-text-container">
-							<img src={Asterisk} alt="asterisk" />
-							<p class="asterisk-text">learn anywhere, anytime, step-by-step</p>
-						</div>
-						<div class="asterisk-text-container">
-							<img src={Asterisk} alt="asterisk" />
-							<p class="asterisk-text">
-								get efficient at a new skill quickly & safely
-							</p>
-						</div>
-						<div class="asterisk-text-container">
-							<img src={Asterisk} alt="asterisk" />
-							<p class="asterisk-text">
-								save money training yourself, and others, up
-							</p>
-						</div>
-						<div class="asterisk-text-container">
-							<img src={Asterisk} alt="asterisk" />
-							<p class="asterisk-text">
-								visualize it all in precise 3D & video
-							</p>
-						</div>
-					</div>
-					<div class="tag-and-email-container-mobile">
-						<h2 class="tag">knowledge is a right.<br />stay eluminated.</h2>
-						<div class="launching-email-container">
-							<img src={Envelope} alt="envelope" />
-							<a href="mailto:info@elumplatform" class="launching-email"
-								>info@elumplatform.com</a
-							>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-		<script>
-			//document.addEventListener("DOMContentLoaded", function () {
-			window.onload = function () {
-				let hiddenMobileLogo, logoLocationTwo, distanceX, distanceY;
-				const logoFollower = document.querySelector("#logo-follower");
-				const sectionCount = document.querySelectorAll(".section").length;
-				let resizeTimer;
+              <span class="launching-date">launching 2024</span>
+            </div>
+            <div class="launching-spacer"></div>
+          </div>
+          <div class="asterisk-container">
+            <div class="asterisk-text-container">
+              <img src={Asterisk} alt="asterisk" />
+              <p class="asterisk-text">learn anywhere, anytime, step-by-step</p>
+            </div>
+            <div class="asterisk-text-container">
+              <img src={Asterisk} alt="asterisk" />
+              <p class="asterisk-text">
+                get efficient at a new skill quickly & safely
+              </p>
+            </div>
+            <div class="asterisk-text-container">
+              <img src={Asterisk} alt="asterisk" />
+              <p class="asterisk-text">
+                save money training yourself, and others, up
+              </p>
+            </div>
+            <div class="asterisk-text-container">
+              <img src={Asterisk} alt="asterisk" />
+              <p class="asterisk-text">
+                visualize it all in precise 3D & video
+              </p>
+            </div>
+          </div>
+          <div class="tag-and-email-container-mobile">
+            <h2 class="tag">knowledge is a right.<br />stay eluminated.</h2>
+            <div class="launching-email-container">
+              <img src={Envelope} alt="envelope" />
+              <a href="mailto:info@elumplatform" class="launching-email"
+                >info@elumplatform.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      //document.addEventListener("DOMContentLoaded", function () {
+      window.onload = function () {
+        let hiddenMobileLogo, logoLocationTwo, distanceX, distanceY;
+        const logoFollower = document.querySelector("#logo-follower");
+        const sectionCount = document.querySelectorAll(".section").length;
+        let resizeTimer;
 
-				function updatePositions() {
-					logoFollower.style.transition = "none";
-					hiddenMobileLogo = document
-						.querySelector("#hidden-mobile-logo")
-						.getBoundingClientRect();
-					logoLocationTwo = document
-						.querySelector("#logo-location-two")
-						.getBoundingClientRect();
-					distanceX = logoLocationTwo.left - hiddenMobileLogo.left;
-					distanceY = logoLocationTwo.top - hiddenMobileLogo.top;
-					logoFollower.style.left =
-						hiddenMobileLogo.left + window.scrollX + "px";
-					logoFollower.style.top = hiddenMobileLogo.top + window.scrollY + "px";
-					logoFollower.style.visibility = "visible";
-					document.querySelector("#hidden-mobile-logo").style.visibility =
-						"hidden";
-					setTimeout(() => {
-						logoFollower.style.transition = "all 0.5s linear";
-					}, 300);
-				}
+        function updatePositions() {
+          logoFollower.style.transition = "none";
+          hiddenMobileLogo = document
+            .querySelector("#hidden-mobile-logo")
+            .getBoundingClientRect();
+          logoLocationTwo = document
+            .querySelector("#logo-location-two")
+            .getBoundingClientRect();
+          distanceX = logoLocationTwo.left - hiddenMobileLogo.left;
+          distanceY = logoLocationTwo.top - hiddenMobileLogo.top;
+          logoFollower.style.left =
+            hiddenMobileLogo.left + window.scrollX + "px";
+          logoFollower.style.top = hiddenMobileLogo.top + window.scrollY + "px";
+          logoFollower.style.visibility = "visible";
+          document.querySelector("#hidden-mobile-logo").style.visibility =
+            "hidden";
+          setTimeout(() => {
+            logoFollower.style.transition = "all 0.5s linear";
+          }, 300);
+        }
 
-				setTimeout(updatePositions, 200);
+        setTimeout(updatePositions, 200);
 
-				window.addEventListener("resize", function () {
-					//if (window.innerWidth <= 431) {
-					clearTimeout(resizeTimer);
+        window.addEventListener("resize", function () {
+          //if (window.innerWidth <= 431) {
+          clearTimeout(resizeTimer);
 
-					// Hide logo-follower and show other logos during resizing
-					logoFollower.style.visibility = "hidden";
-					document.querySelector("#hidden-mobile-logo").style.visibility =
-						"visible";
+          // Hide logo-follower and show other logos during resizing
+          logoFollower.style.visibility = "hidden";
+          document.querySelector("#hidden-mobile-logo").style.visibility =
+            "visible";
 
-					resizeTimer = setTimeout(updatePositions, 200); // Time after which the updatePositions function will run again
-					//}
-				});
+          resizeTimer = setTimeout(updatePositions, 200); // Time after which the updatePositions function will run again
+          //}
+        });
 
-				// fullPage.js Settings
+        // fullPage.js Settings
 
-				new fullpage("#fullpage", {
-					licenseKey: "NLNLI-982P9-87SIK-FNMH9-XJBUM",
-					//autoScrolling: true,
-					//scrollHorizontally: true,
-					//fitToSection: false,
-					css3: true,
-					autoScrolling: true,
-					scrollBar: false,
-					scrollingSpeed: 900,
-					fixedElements: ".sticky-logo, .gradient, .modal",
-					credits: {
-						enabled: false,
-					},
-					onLeave: function (origin, destination, direction) {
-						// Logo methods
-						const progress = destination.index / (sectionCount - 1);
-						const newX = hiddenMobileLogo.left + distanceX * progress;
-						const newY = hiddenMobileLogo.top + distanceY * progress;
-						logoFollower.style.left = newX + "px";
-						logoFollower.style.top = newY + "px";
-						// Opacity
-						const firstPageContainer =
-							document.getElementById("first-page-opacity");
-						if (origin.index == 0 && direction == "down") {
-							firstPageContainer.style.opacity = 0;
-						} else if (origin.index == 1 && direction == "up") {
-							firstPageContainer.style.opacity = 1;
-						}
-					},
-				});
-			};
-		</script>
-		<script>
-			// Scroll button
-			document
-				.querySelector(".scroll-icon")
-				.addEventListener("click", function () {
-					fullpage_api.moveTo("second-page-anchor");
-				});
+        new fullpage("#fullpage", {
+          licenseKey: "NLNLI-982P9-87SIK-FNMH9-XJBUM",
+          //autoScrolling: true,
+          //scrollHorizontally: true,
+          //fitToSection: false,
+          css3: true,
+          autoScrolling: true,
+          scrollBar: false,
+          scrollingSpeed: 900,
+          fixedElements: ".sticky-logo, .gradient, .modal",
+          credits: {
+            enabled: false,
+          },
+          onLeave: function (origin, destination, direction) {
+            // Logo methods
+            const progress = destination.index / (sectionCount - 1);
+            const newX = hiddenMobileLogo.left + distanceX * progress;
+            const newY = hiddenMobileLogo.top + distanceY * progress;
+            logoFollower.style.left = newX + "px";
+            logoFollower.style.top = newY + "px";
+            // Opacity
+            const firstPageContainer =
+              document.getElementById("first-page-opacity");
+            if (origin.index == 0 && direction == "down") {
+              firstPageContainer.style.opacity = 0;
+            } else if (origin.index == 1 && direction == "up") {
+              firstPageContainer.style.opacity = 1;
+            }
+          },
+        });
+      };
+    </script>
+    <script>
+      // Scroll button
+      document
+        .querySelector(".scroll-icon")
+        .addEventListener("click", function () {
+          fullpage_api.moveTo("second-page-anchor");
+        });
 
-			// Open modal when clicking the video button
-			document
-				.querySelector(".video-button")
-				.addEventListener("click", function () {
-					document.querySelector(".modal").style.display = "flex";
-				});
+      // Open modal when clicking the video button
+      document
+        .querySelector(".video-button")
+        .addEventListener("click", function () {
+          document.querySelector(".modal").style.display = "flex";
+        });
 
+<<<<<<< HEAD
 			// Close modal function
 			function closeModal() {
 				var modal = document.querySelector(".modal");
@@ -265,12 +317,21 @@ import Envelope from "../assets/envelope.svg";
 			document
 				.querySelector(".close-video")
 				.addEventListener("click", closeModal);
+=======
+      // Close modal when clicking the close button
+      document
+        .querySelector(".close-video")
+        .addEventListener("click", function () {
+          document.querySelector(".modal").style.display = "none";
+        });
+>>>>>>> c03ee8aae5dfb227afb35434f3c97d0d8b3768bd
 
-			// Close modal when clicking outside the video container
-			document.addEventListener("click", function (event) {
-				var modal = document.querySelector(".modal");
-				var videoContainer = document.querySelector(".video-container");
+      // Close modal when clicking outside the video container
+      document.addEventListener("click", function (event) {
+        var modal = document.querySelector(".modal");
+        var videoContainer = document.querySelector(".video-container");
 
+<<<<<<< HEAD
 				if (
 					modal.style.display === "flex" &&
 					!videoContainer.contains(event.target) &&
@@ -281,4 +342,16 @@ import Envelope from "../assets/envelope.svg";
 			});
 		</script>
 	</body>
+=======
+        if (
+          modal.style.display === "flex" &&
+          !videoContainer.contains(event.target) &&
+          event.target !== document.querySelector(".video-button")
+        ) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+>>>>>>> c03ee8aae5dfb227afb35434f3c97d0d8b3768bd
 </html>
