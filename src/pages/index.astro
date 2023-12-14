@@ -35,6 +35,7 @@ import Envelope from "../assets/envelope.svg";
 			<div class="modal">
 				<div class="video-container">
 					<iframe
+						id="youtube-video"
 						src="https://www.youtube.com/embed/cfFI0LokqhI"
 						title="YouTube video player"
 						frameborder="0"
@@ -249,12 +250,21 @@ import Envelope from "../assets/envelope.svg";
 					document.querySelector(".modal").style.display = "flex";
 				});
 
+			// Close modal function
+			function closeModal() {
+				var modal = document.querySelector(".modal");
+				var iframe = document.getElementById("youtube-video");
+				modal.style.display = "none";
+
+				// Pause the video
+				var iframeSrc = iframe.src;
+				iframe.src = iframeSrc;
+			}
+
 			// Close modal when clicking the close button
 			document
 				.querySelector(".close-video")
-				.addEventListener("click", function () {
-					document.querySelector(".modal").style.display = "none";
-				});
+				.addEventListener("click", closeModal);
 
 			// Close modal when clicking outside the video container
 			document.addEventListener("click", function (event) {
@@ -266,7 +276,7 @@ import Envelope from "../assets/envelope.svg";
 					!videoContainer.contains(event.target) &&
 					event.target !== document.querySelector(".video-button")
 				) {
-					modal.style.display = "none";
+					closeModal();
 				}
 			});
 		</script>
